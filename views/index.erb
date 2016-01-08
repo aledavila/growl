@@ -11,8 +11,7 @@
         <% unless @growls.empty? %>
             <ul>
                 <% @growls.each do |growl| %>
-                    <li><%= growl[:message] %></li>
-                    <li><%= growl[:timestamp] %></li>
+                 <li><%="#{growl[:message]} <br><span>#{growl[:timestamp]}</span>"%></li>
                 <% end %>
             </ul>
         <% end %>

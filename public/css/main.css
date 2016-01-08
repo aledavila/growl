@@ -55,3 +55,8 @@ li {
 li:hover {
   color: red;
 }
+
+span {
+  font-size: 14px;
+  color: red;
+}
