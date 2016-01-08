@@ -1,17 +1,19 @@
-<div class="feed">
+<div>
     <form action="/growl" method="post" accept-charset="utf-8">
-        <textarea name="growl" type="text" placeholder="growl"></textarea>
+        <textarea name="growl" type="text" placeholder="growl" rows="5"></textarea>
         <input type="submit" value="Growl"></input>
     </form>
 
-    <% if @growls.empty? %>
+    <div class="feed">
+        <% if @growls.empty? %>
 
-    <% else %>
-        <ul>
-            <% @growls.each do |growl| %>
-                <li><%= growl %></li>
-            <% end %>
-        </ul>
-    <% end %>
+        <% else %>
+            <ul>
+                <% @growls.each do |growl| %>
+                    <li><%= growl %></li>
+                <% end %>
+            </ul>
+        <% end %>
+    </div>
 
 </div>
