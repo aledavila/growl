@@ -3,13 +3,14 @@
         <textarea name="growl" type="text" placeholder="growl"></textarea>
         <input type="submit" value="Growl"></input>
     </form>
+    <form action="/clear" method="post" accept-charset="utf-8">
+        <input type="submit" value="Clear" name="clear"></input>
+    </form>
 
-    <% if @growls.empty? %>
-
-    <% else %>
+    <% unless @growls.empty? %>
         <ul>
             <% @growls.each do |growl| %>
-                <li><%= growl %></li>
+                <li><%="#{growl[:timestamp]}: #{growl[:message]}" %></li>
             <% end %>
         </ul>
     <% end %>

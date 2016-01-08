@@ -18,7 +18,10 @@ end
 
 post '/growl' do
 
-  growl = params[:growl]
+  timestamp = Time.now
+  timestamp = "#{timestamp.hour}:#{timestamp.min}"
+
+  growl = { message: params[:growl], timestamp: timestamp }
 
   if growl.length > 142
     flash[:length] = "Your growl is too long"
@@ -31,4 +34,10 @@ post '/growl' do
     redirect '/'
   end
 
+end
+
+post '/clear' do
+  session.clear
+
+  redirect '/'
 end
