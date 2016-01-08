@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  font-size: 14px;
+  font-size: 18px;
   font-family: 'Helvetica Neue';
 }
 
@@ -11,16 +11,27 @@ header {
 h1 {
   font-family: 'Sigmar One', cursive;
   color: red;
-  margin-top: 3%;
+  margin-top: 2%;
   font-size: 4em;
+}
+
+textarea {
+  resize: none;
+  width: 350px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  border-radius: 2%;
 }
 
 .feed {
   padding: 2% 0;
-  border: 1px solid black;
-  margin-right: 35%;
-  margin-left: 35%;
+  border: 2px solid gray;
+  border-radius: 1%;
+  margin-right: 30%;
+  margin-left: 30%;
   margin-top: 2%;
+  max-height: 500px;
+  overflow: scroll;
 }
 
 ul {
@@ -29,9 +40,18 @@ ul {
 }
 
 li {
-  display: block;
-  text-decoration: none;
-  margin-top: 8%;
-  padding-left: 3%;
-  padding-right: 3%;
+    display: block;
+    text-decoration: none;
+    margin-top: 8%;
+    padding-right: 3%;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 2em 3em;
+    color: #999;
+    border-left: 2px solid #999;
+    padding-left: 1em;
+    text-align: left;
+}
+
+li:hover {
+  color: red;
 }
