@@ -1,18 +1,20 @@
-<div class="feed">
+<div>
     <form action="/growl" method="post" accept-charset="utf-8">
-        <textarea name="growl" type="text" placeholder="growl"></textarea>
+        <textarea name="growl" type="text" placeholder="growl" rows="5"></textarea>
         <input type="submit" value="Growl"></input>
     </form>
     <form action="/clear" method="post" accept-charset="utf-8">
         <input type="submit" value="Clear" name="clear"></input>
     </form>
 
-    <% unless @growls.empty? %>
-        <ul>
-            <% @growls.each do |growl| %>
-                <li><%="#{growl[:timestamp]}: #{growl[:message]}" %></li>
-            <% end %>
-        </ul>
-    <% end %>
+    <div class="feed">
+        <% unless @growls.empty? %>
+            <ul>
+                <% @growls.each do |growl| %>
+                    <li><%="#{growl[:timestamp]}: #{growl[:message]}" %></li>
+                <% end %>
+            </ul>
+        <% end %>
+    </div>
 
 </div>
