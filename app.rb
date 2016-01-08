@@ -18,14 +18,15 @@ end
 
 post '/growl' do
 
-  timestamp = Time.now.asctime
+  timestamp = Time.now
+  timestamp = "#{timestamp.hour}:#{timestamp.min}"
 
   growl = { message: params[:growl], timestamp: timestamp }
 
-  if growl.length > 142
+  if growl[:message].length > 142
     flash[:length] = "Your growl is too long"
     redirect '/'
-  elsif growl.empty?
+  elsif growl[:message].empty?
     flash[:blank] = "Please enter text"
     redirect '/'
   else  
