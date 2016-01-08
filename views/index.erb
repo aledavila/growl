@@ -1,6 +1,7 @@
 <div>
     <form action="/growl" method="post" accept-charset="utf-8">
         <textarea name="growl" type="text" placeholder="growl" rows="5"></textarea>
+        <br>
         <input type="submit" value="Growl"></input>
     </form>
     <form action="/clear" method="post" accept-charset="utf-8">
@@ -11,7 +12,9 @@
         <% unless @growls.empty? %>
             <ul>
                 <% @growls.each do |growl| %>
-                 <li><%="#{growl[:message]} <br><span>#{growl[:timestamp]}</span>"%></li>
+                    <div class="growl">
+                        <li><%="#{growl[:message]} <br><span>#{growl[:timestamp]}</span>"%></li>
+                    </div>
                 <% end %>
             </ul>
         <% end %>

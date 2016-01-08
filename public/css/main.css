@@ -39,6 +39,7 @@ ul {
   padding: 0;
 }
 
+
 li {
     display: block;
     text-decoration: none;
@@ -50,6 +51,7 @@ li {
     border-left: 2px solid #999;
     padding-left: 1em;
     text-align: left;
+    word-wrap: break-word;
 }
 
 li:hover {
