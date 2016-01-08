@@ -1,0 +1,37 @@
+body {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Helvetica Neue';
+}
+
+header {
+
+}
+
+h1 {
+  font-family: 'Sigmar One', cursive;
+  color: red;
+  margin-top: 3%;
+  font-size: 4em;
+}
+
+.feed {
+  padding: 2% 0;
+  border: 1px solid black;
+  margin-right: 35%;
+  margin-left: 35%;
+  margin-top: 2%;
+}
+
+ul {
+  margin-top: 6%;
+  padding: 0;
+}
+
+li {
+  display: block;
+  text-decoration: none;
+  margin-top: 8%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
