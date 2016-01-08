@@ -1,14 +1,17 @@
 <div>
-    <form action="growl" method="post" accept-charset="utf-8">
-        <textarea name="growl" placeholder="growl"></textarea>
-        <button type="submit">Growl</button>
+    <form action="/growl" method="post" accept-charset="utf-8">
+        <input name="growl" type="text" placeholder="growl"></input>
+        <input type="submit" value="Growl"></input>
     </form>
 
-    <ul>
-        <li>Ryan sucks</li>
-        <li>He is a loser</li>
-        <li>I can't believe I'm friends with him</li>
-        <li>I don't want to talk to him anymore</li>
-    </ul>
+    <% if @growls.empty? %>
+        
+    <% else %>
+        <% @growls.each do |growl| %>
+            <ul>
+                <li><%= growl %></li> 
+            </ul>
+        <% end %> 
+    <% end %>
 
 </div>
