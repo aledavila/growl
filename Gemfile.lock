@@ -23,6 +23,8 @@ GEM
       rack-test
       sinatra (~> 1.4.0)
       tilt (>= 1.3, < 3)
+    sinatra-flash (0.3.0)
+      sinatra (>= 1.0.0)
     sinatra-formkeeper (0.0.7)
       formkeeper (~> 0.0.12)
       hpricot
@@ -36,7 +38,5 @@ PLATFORMS
 DEPENDENCIES
   sinatra
   sinatra-contrib
+  sinatra-flash
   sinatra-formkeeper
-
-BUNDLED WITH
-   1.11.2

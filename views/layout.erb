@@ -9,11 +9,18 @@
 <body>
 
 <main class="container">
-
     <header class="header">
         <h1>Growler</h1>
     </header>
+
+    <% if flash[:blank] || flash[:length] %>
+      <p><%= flash[:blank] %></p>
+      <p><%= flash[:length] %></p>
+    <% end %>
+
     <%= yield %>
+
 </main>
+
 </body>
 </html>
