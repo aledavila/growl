@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require 'sinatra/formkeeper'
 
 enable :sessions
 
@@ -16,9 +17,9 @@ end
 
 post '/growl' do
 
+
   growl = params[:growl]
   session[:growls].push(growl)
-
   redirect '/'
 
 end
