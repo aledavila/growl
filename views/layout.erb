@@ -8,6 +8,11 @@
 
 <h1>Growl</h1>
 
+<% if flash[:blank] || flash[:length] %>
+  <p><%= flash[:blank] %></p>
+  <p><%= flash[:length] %></p>
+<% end %>
+
 <%= yield %>
 
 
