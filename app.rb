@@ -18,8 +18,7 @@ end
 
 post '/growl' do
 
-  timestamp = Time.now
-  timestamp = "#{timestamp.hour}:#{timestamp.min}"
+  timestamp = Time.now.asctime
 
   growl = { message: params[:growl], timestamp: timestamp }
 
