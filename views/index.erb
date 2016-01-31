@@ -1,23 +1,78 @@
-<div>
-    <form action="/growl" method="post" accept-charset="utf-8">
-        <textarea name="growl" type="text" placeholder="growl" rows="5"></textarea>
-        <br>
-        <input type="submit" value="Growl"></input>
-    </form>
-    <form action="/clear" method="post" accept-charset="utf-8">
-        <input type="submit" value="Clear" name="clear"></input>
-    </form>
+<div class="feed-container">
 
-    <div class="feed">
-        <% unless @growls.empty? %>
-            <ul>
-                <% @growls.each do |growl| %>
-                    <div class="growl">
-                        <li><%="#{growl[:message]} <br><span>#{growl[:timestamp]}</span>"%></li>
-                    </div>
-                <% end %>
-            </ul>
-        <% end %>
+    <div class="pro">
+        <div class="profile">
+            <div class="ui card">
+              <div class="image">
+                <img src="http://bit.ly/1SQQTyA">
+              </div>
+              <div class="content">
+                <a class="header">Sam Waits</a>
+                <div class="meta">
+                  <span class="date">Joined in 2013</span>
+                </div>
+                <div class="description">
+                  Director of nerdland.
+                </div>
+              </div>
+              <div class="extra content">
+                <a>
+                  <i class="user icon"></i>
+                  0 Friends
+                </a>
+              </div>
+            </div>
+        </div>
     </div>
 
+    <div class="feed">
+
+        <form id="form_growl" class="ui reply form" action="/growl" method="post" accept-charset="utf-8">
+            <div class="field">
+                <textarea name="growl" type="text" placeholder="growl" rows="5"></textarea>
+            </div>
+        </form>
+        <form id="form_clear" action="/clear" method="post" accept-charset="utf-8"></form>
+
+        <div class="ui buttons">
+          <button form="form_clear" class="ui button clear">Clear</button>
+          <div class="or"></div>
+          <button form="form_growl" class="ui button submit">Submit</button>
+        </div>
+
+        <div class="error">
+            <% if flash[:blank] || flash[:length] %>
+              <p><%= flash[:blank] %></p>
+              <p><%= flash[:length] %></p>
+            <% end %>
+        </div>
+
+        <div class="comments">
+            <h3 class="ui dividing header">Growls</h3>
+            <div class="posts">
+                <% unless @growls.empty? %>
+                    <ul>
+                        <% @growls.each do |growl| %>
+                            <div class="growl">
+                                <li><%="#{growl[:message]} <br><span>#{growl[:timestamp]}</span>"%></li>
+                            </div>
+                        <% end %>
+                    </ul>
+                <% end %>
+            </div>
+        </div>
+
+    </div>
 </div>
+
+<!-- <div class="ui comments">
+  <h3 class="ui dividing header">Comments</h3>
+  <form class="ui reply form">
+    <div class="field">
+      <textarea></textarea>
+    </div>
+    <div class="ui blue labeled submit icon button">
+      <i class="icon edit"></i> Add Reply
+    </div>
+  </form>
+</div> -->

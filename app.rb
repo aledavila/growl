@@ -16,19 +16,27 @@ get '/' do
 
 end
 
+get '/landing' do
+  erb :landing
+end
+
+get '/login' do
+  erb :login
+end
+
 post '/growl' do
 
   timestamp = Time.now.asctime
 
   growl = { message: params[:growl], timestamp: timestamp }
 
-  if growl[:message].length > 142
-    flash[:length] = "Your growl is too long"
+  if growl[:message].length >= 140
+    flash[:length] = "Your growl is too long. Max. 140 characters"
     redirect '/'
   elsif growl[:message].empty?
     flash[:blank] = "Please enter text"
     redirect '/'
-  else  
+  else
     session[:growls].push(growl)
     redirect '/'
   end

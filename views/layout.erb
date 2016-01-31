@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link href='https://fonts.googleapis.com/css?family=Sigmar+One|Josefin+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <meta charset="UTF-8">
     <title>Growler</title>
@@ -9,18 +10,33 @@
 <body>
 
 <main class="container">
+
+    <div class="ui secondary pointing menu">
+      <a class="item">
+        Home
+      </a>
+      <a class="item">
+        Profile
+      </a>
+      <a class="item">
+        Friends
+      </a>
+      <div class="right menu">
+        <a class="ui item">
+          Logout
+        </a>
+      </div>
+    </div>
+
     <header class="header">
         <h1>Growler</h1>
     </header>
 
-    <% if flash[:blank] || flash[:length] %>
-      <p><%= flash[:blank] %></p>
-      <p><%= flash[:length] %></p>
-    <% end %>
-
     <%= yield %>
 
 </main>
+
+<script type="text/javascript" src="/semantic/semantic.min.js"></script>
 
 </body>
 </html>
