@@ -24,6 +24,17 @@ get '/login' do
   erb :login
 end
 
+post '/login' do 
+  user = { username: params[:username], password: params[:password] }
+  session[:user] = user
+  redirect '/'
+end
+
+get '/logout' do 
+  session[:user] = nil
+  redirect '/landing'
+end
+
 post '/growl' do
 
   timestamp = Time.now.asctime

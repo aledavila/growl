@@ -4,6 +4,15 @@ body {
   font-family: 'Helvetica Neue';
 }
 
+.main-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-container {
+  margin: 2.5%;
+}
+
 .container {
   margin-top: 5%;
 }
